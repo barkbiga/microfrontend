@@ -16,16 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
       - persist_to_workspace:
           root: ~/
           paths:
             - container/dist
       - attach_workspace:
           at: ~/
-
-      - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm run build
 
 
       - name: S3 sync
