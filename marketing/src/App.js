@@ -7,6 +7,7 @@ import Pricing from './components/Pricing';
 export default() => {
     return (<div>
         <StylesProvider>
+            
             <BrowserRouter>
                <Switch>
                    <Route exact path="/pricing" component= {Pricing} />
