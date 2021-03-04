@@ -32,4 +32,4 @@ jobs:
           aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest --delete 
       - name: Invalide cloudfront
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTIION_ID }}   --paths  "/marketing/latest/index.html 
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTIION_ID }}   --paths  "/marketing/latest/index.html"

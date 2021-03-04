@@ -34,7 +34,7 @@ jobs:
           aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest --delete 
       - name: Invalidate cloudfront
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTIION_ID }}   --paths  "/container/latest/index.html 
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTIION_ID }}   --paths  "/container/latest/index.html"
 
  #     - name: S3 sync
 #      uses: ItsKarma/aws-cli@v1.70.0
